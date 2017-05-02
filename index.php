@@ -1,13 +1,29 @@
+Pada blog ini saya coba share tentang aplikasi berbasis web sederhana untuk memberikan pengumuman kelulusan siswa secara online
+
+<img class="wp-image-188 size-medium aligncenter" src="http://i.imgur.com/RjDccRi.png" alt="Tampilang Website Pengumuman" width="800" height="387" />
+
+<a href="https://github.com/septianto3/Pengumuman-Kelulusan-Siswa-Sederhana">Link Download</a>
+
+<!--more-->
+
+Dalam file aplikasi ini, saya menggunakan hanya 1 file pusat dengan nama index.php yang mengatur tampilan, mengatur koneksi ke database, mengatur kueri database
+
+<pre class="lang:php theme:Classic mark:1,2-4" title="index.php">
 <!DOCTYPE html>
 <html lang="en">
 <head>
+                //Melakukan koneksi ke mysql 
 		<?php
-		$conn = @mysql_connect('localhost','smkwhsby_hasilun','#5ZE$re^3MsV');
+                //username merupakan username dari akses mysql pada server atau hosting Anda
+                //password merupakan password dari akses mysql pada server atau hosting Anda
+		$conn = @mysql_connect('localhost','username','password');
 		if (!$conn) {
 			die('Could not connect: ' . mysql_error());
 		}
-		mysql_select_db('smkwhsby_hasilun', $conn);
-	?>
+                //database merupakan nama dari database Anda
+		mysql_select_db('database', $conn);
+	        ?>
+                //
   <meta charset="utf-8" />
   <title>Website Pengumuman Hasil UN Tahun 2017</title>
   <meta name="description" content="web, website, pengumuman, hasil, un, uncbt, tahun, 2017" />
@@ -60,8 +76,10 @@
 		     $button = "";
 		 }
 		 if($button == "ok"){
+                     //Melakukan pengecekan apakah nomer sudah sebanyak 15 digit 
 		     if(strlen($no) == 15){
-				$result = mysql_query("SELECT * FROM `2017` WHERE `NO` = '$no'");
+                                //tabel merupakan nama tabel yang berisi data nilai dari peserta didik
+				$result = mysql_query("SELECT * FROM `tabel` WHERE `NO` = '$no'");
 				$row = mysql_fetch_row($result);
 
 				$NO = $row[0];
@@ -154,3 +172,4 @@
   <script src="js/app.data.js"></script>
 </body>
 </html>
+</pre>
