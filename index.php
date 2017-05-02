@@ -1,14 +1,3 @@
-Pada blog ini saya coba share tentang aplikasi berbasis web sederhana untuk memberikan pengumuman kelulusan siswa secara online
-
-<img class="wp-image-188 size-medium aligncenter" src="http://i.imgur.com/RjDccRi.png" alt="Tampilang Website Pengumuman" width="800" height="387" />
-
-<a href="https://github.com/septianto3/Pengumuman-Kelulusan-Siswa-Sederhana">Link Download</a>
-
-<!--more-->
-
-Dalam file aplikasi ini, saya menggunakan hanya 1 file pusat dengan nama index.php yang mengatur tampilan, mengatur koneksi ke database, mengatur kueri database
-
-<pre class="lang:php theme:Classic mark:1,2-4" title="index.php">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,4 +161,3 @@ Dalam file aplikasi ini, saya menggunakan hanya 1 file pusat dengan nama index.p
   <script src="js/app.data.js"></script>
 </body>
 </html>
-</pre>
